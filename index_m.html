@@ -1,0 +1,83 @@
+
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+
+	<title>jke-d3-ecg</title>
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="css1/jke-d3-ecg.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+
+
+  
+</head>
+
+ 
+<div class="container">
+
+  <div class="panel-group">
+    
+
+    <div class="panel panel-primary">
+      <div class="panel-heading"><h4 align="center">EMG Signal</h4></div>
+	  </div>
+      <div class="panel-body">
+	 <body ng-controller="myController">
+
+    <center> <hc-chart options="chartOptions">Placeholder for generic chart</hc-chart></center>
+     
+
+    <script>
+
+        //creating an application module
+        var myModule = angular.module("myModule", []);
+        angular.module('myModule', [])
+
+            // Directive for generic chart, pass in chart options
+            .directive('hcChart', function () {
+                return {
+                    restrict: 'E',
+                    template: '<div></div>',
+                    scope: {
+                        options: '='
+                    },
+                    link: function (scope, element) {
+                        Highcharts.chart(element[0], scope.options);
+                    }
+                };
+            })
+            
+            .controller('myController', function ($scope) {
+                
+                // Sample options for first chart
+                $scope.chartOptions = {
+                    title: {
+                        text: 'EMG Signal'
+                    },
+                    xAxis: {
+                        categories: ['', '', 'P', '', 'Q', 'R','S','','T','','',]
+                    },
+
+                    series: [{
+                        data: [0.0, 0.0, 5.0, 0.0, -5.0, 30.0, -8.0, 0.0, 5.0, 0.0,0.0]
+                    }]
+                };               
+            });
+    </script>
+	
+</body>
+<div class="panel panel-primary">
+      <div class="panel-heading"><h5 align="center">Copyright @ 2017-2018</h5></div>
+	  </div>
+</html>

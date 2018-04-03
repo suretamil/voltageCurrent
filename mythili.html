@@ -1,0 +1,38 @@
+
+<div class="container">
+        
+        <p> Time   :  {{monitor.updatedAt1 | date:'yyyy-MM-dd HH:mm:ss'}}  <br>Status:  {{monitor.latestStatus}}</p>
+       
+		 <section class="content">
+        <div class="row">
+             
+			<div class="col-md-4 col-sm-6 col-xs-12">
+                <h2>Current</h2>
+                <div ng-class="'c100 p' + graphCurrent + ' big green'">
+                    <span>{{monitor.graphCurrent}}  % </span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+            </div>
+			<div class="col-md-4 col-sm-6 col-xs-12">
+                <h2>Voltage </h2>
+                <div ng-class="'c100 p' + monitor.graphVoltage + ' big green'">
+                    <span>{{monitor.graphVoltage}} %  </span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+            </div>
+           </div>
+
+
+           <!-- <div class="row">
+                <div id="chart_div"></div>
+           </div> -->
+          
+
+</section>
+    </div>

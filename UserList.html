@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Time</title>
+    <script src="https://www.gstatic.com/firebasejs/4.11.1/firebase.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
+</head>
+<body>
+    <table align="center">
+    <tr>
+        <td>Voltege:<h1 id="voltege"></h1></td>
+         <td>Current:<h1 id="bigOne"></h1></td>
+
+
+
+         
+
+    </tr>
+     </table>
+
+<script>
+
+
+    
+
+
+
+   
+       
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC8Zijwus62xrztaBLB8EETd5nv2o_apFc",
+    authDomain: "humiditytemp-cb646.firebaseapp.com",
+    databaseURL: "https://humiditytemp-cb646.firebaseio.com",
+    projectId: "humiditytemp-cb646",
+    storageBucket: "humiditytemp-cb646.appspot.com",
+   
+  };
+  firebase.initializeApp(config);
+
+ 
+    
+     
+var voltege = document.getElementById('voltege');
+var dbRef = firebase.database().ref().child('/PMS/ECG');
+dbRef.on('value', snap => voltege.innerText = snap.val());
+
+
+var bigOne = document.getElementById('bigOne');
+var dbRef = firebase.database().ref().child('/PMS/-L79joI7MpKKPBsloMTM/EMG');
+dbRef.on('value', snap => bigOne.innerText = snap.val());
+
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+
+JUN
+14
+RealTime Chat App with FIREBASE + JQUERY
+
+Image result for firebase\
+Step1: Creating Database
+Create a Firebase account with google or github.
+
+Step2:
+Navigate to database section
+Go to rules tab > set read and write values to true to remove the read and write rules. (Authentication is enabled by default).
+
+
+Firebase DB Structure looks like the below picture when a record is inserted.
+
+
+The database is created. In Firebase, the database holds JSON data. After creating DB, now create frontend to retrieve DB actions.
+Step3: Client Side:
+Libraries:
+<script type="text/javascript" src="firebase.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+Message Body:
+<div id="messageDiv">this is the div</div>
+<input id="nameInput" placeholder="Name"/>
+<input id="messageInput" placeholder="Message..."/>
+
+
+FireBase javascript code:
+<script>
+var messageRef = new Firebase('https://chat-9d9f1.firebaseio.com/');
+$('#messageInput').keypress(function(e){
+   if(e.keyCode == 13) {
+     var name = $('#nameInput').val();
+  var text = $('#messageInput').val();
+  messageRef.push({name:name, text:text});
+  // messageRef.child('currentMessage');
+  $('#messageInput').val();
+   }
+
+});
+
+messageRef.on('child_added',function(snapshot){
+   var message = snapshot.val();
+  console.log(message);
+  document.getElementById('messageDiv').innerHTML += message.name+'--'+message.text+'<br/>';
+
+});
+
+</script>
+
+
+Step4:
+Now the chat app dynamically gets the messages from firebug and pushes on to page when you hit enter after entering the form data.
+Test this app from two different browsers to observe the Firebase functionality.
+
+Test the application:
+
+1)Copy below html code and open html page in two different browsers/windows.
+
+2)Enter Name, Message and hit ENTER.
+
+3)You could observe that the message reflects in the other browser div.
+
+chat.html
+
+<html>
+<head>
+<title>Sample chat app</title>
+<script type="text/javascript" src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div id="messageDiv">Chat APP<br/></div>
+<input id="nameInput" placeholder="Name"/>
+<input id="messageInput" placeholder="Message..."/>
+<script>
+var messageRef = new Firebase('https://chat-9d9f1.firebaseio.com/');
+$('#messageInput').keypress(function(e){
+   if(e.keyCode == 13) {
+     var name = $('#nameInput').val();
+  var text = $('#messageInput').val();
+  messageRef.push({name:name, text:text});
+  // messageRef.child('currentMessage');
+  $('#messageInput').val();
+   }
+
+});
+
+messageRef.on('child_added',function(snapshot){
+   var message = snapshot.val();
+  console.log(message);
+  document.getElementById('messageDiv').innerHTML += message.name+'--'+message.text+'<br/>';
+
+});

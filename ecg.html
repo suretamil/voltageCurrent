@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+ 
+	<title>Ecg Signal</title>
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="css1/jke-d3-ecg.css">
+
+
+  
+</head>
+
+ 
+<div class="container">
+
+  <div class="panel-group">
+    
+
+    <div class="panel panel-primary">
+      <div class="panel-heading"><h4 align="center">ECG Signal</h4></div>
+    </div>
+   <div class="panel-body">
+   <body style="margin: 30px;">
+
+
+	<!-- Placeholder for the ECG chart -->
+	
+<center>	<div class="jke-ecgChart"></div></center>
+
+	<!-- Include dependencies -->
+	<script src="js2/lib/jquery.min.js"></script>
+	<script src="js2/lib/jquery-ui-widget.min.js"></script>
+	<script src="js2/lib/d3.min.js"></script>
+
+	<!-- Include jke-d3-ecg and initialize the chart -->
+	<script src="js2/jke-d3-ecg.min.js"></script>
+	<script>
+		$('.jke-ecgChart').ecgChart();
+	</script>
+
+	<!-- Include a data source to feed the ECG chart with data -->
+	<!-- In a real application this should probably be done using a WebSocket -->
+	<script src="js2/datasource.js"></script>
+	</body>
+	</div>
+	</div> 
+	</div>
+
+
+
+<div class="panel panel-primary">
+      <div class="panel-heading"><h5 align="center">Copyright @ 2017-2018 Mythili Krishnan,SRM University</h5></div>
+</div>
+</html>

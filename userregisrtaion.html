@@ -1,0 +1,53 @@
+ <section class="content">
+<div   ng-controller="employeesController">
+	<h1>Employee Details</h1>
+	<div class="modal-header">
+		<h4 class="modal-title" id="myModalLabel">Registration</h4>
+		 
+	</div>
+	<div class="modal-body">             
+                            
+ <div class="col-md-8 col-sm-6 col-xs-12">      
+<form name="frmEmployees" class="form-horizontal">
+	
+<!--Name start-->
+<div class="form-group">
+	<label for="inputEmail3" class="col-sm-6 control-label">Name</label>
+	<div class="col-sm-5">
+		<input type="text" class="form-control has-error" name="name" id="name" value="{{name}}" placeholder="Name" ng-model="employee.name" ng-required="true">
+		<span class="help-inline" ng-show="frmEmployees.name.$invalid && frmEmployees.name.$touched">Name is Required</span>
+	</div>
+</div>
+<!--End-->
+<!--Email start-->
+<div class="form-group">
+	<label for="inputEmail3" class="col-sm-6 control-label">Email</label>
+	<div class="col-sm-5">
+		<input type="email" class="form-control has-error" name="email" id="email" value="{{email}}" placeholder="Enter your Email" ng-model="employee.email" ng-required="true">
+		<span class="help-inline" ng-show="frmEmployees.email.$invalid && frmEmployees.email.$touched">Email is Required</span>
+	</div>
+</div>
+<!--End-->
+<!--passwort start-->
+<div class="form-group">
+	<label for="inputEmail3" class="col-sm-6 control-label">Password</label>
+	<div class="col-sm-5">
+		<input type="password" class="form-control has-error" name="password" id="password" value="{{password}}" placeholder="Enter your Contact" ng-model="employee.password" ng-required="true">
+		<span class="help-inline" ng-show="frmEmployees.password.$invalid && frmEmployees.password.$touched">Contact is Required</span>
+	</div>
+</div>
+<!--End-->
+<!--Moblie Number start-->
+<!--End-->
+
+
+<div  class="modal-footer" >
+	<button type="button" class="col-sm-offset-6 col-sm-2 btn btn-primary" id="btn-save" ng-click="save(modalstate, id)" ng-disabled="frmEmployees.$invalid">Save changes</button>
+
+</div>
+
+</form>
+</div>
+</div>
+</div>
+</section>

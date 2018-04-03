@@ -1,0 +1,43 @@
+
+    <!-- Info boxes -->
+      
+<div class="container">
+        
+        <p>updated {{monitor.updatedAt | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+ <section class="content">
+        <div class="row">
+             <div class="col-md-4 col-sm-6 col-xs-12">
+                <h2>Temperature</h2>
+                <div ng-class="'c100 p' + monitor.graphTemperature + ' big green'">
+                    <span>{{monitor.graphTemperature}}  Celicus</span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+            </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+                <h2>Humidity</h2>
+                <div ng-class="'c100 p' + monitor.graphHumidity + ' big'">
+                    <span>{{monitor.latestHumidity}}%</span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+            </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+                <h2>Soil moisture</h2>
+                <div ng-class="'c100 p' + monitor.graphMoisture + ' big orange'">
+                    <span>{{monitor.graphMoisture}}%</span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+     
+</section>
+    </div>
