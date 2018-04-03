@@ -1,0 +1,28 @@
+{
+  "name": "solar",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "~1.4.2",
+    "bower": "1.4.1",
+    "express": "~4.5.1",
+    "jsonfile": "^4.0.0",
+    "method-override": "~2.0.2",
+    "mysql": "^2.15.0"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install",
+    "start": "node server.js"
+  },
+  "description": "1. node / npm 2. bower",
+  "version": "1.0.0",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "this my own projects"
+  },
+  "keywords": [
+    "12345"
+  ],
+  "author": "tamil",
+  "license": "ISC"
+}
